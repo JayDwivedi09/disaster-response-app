@@ -1,11 +1,27 @@
-click==8.0.4
-dataclasses==0.8
-Flask==2.0.3
-Flask-Cors==5.0.0
-importlib-metadata==4.8.3
-itsdangerous==2.0.1
-Jinja2==3.0.3
-MarkupSafe==2.0.1
-typing-extensions==4.1.1
-Werkzeug==2.0.3
-zipp==3.6.0
+# Disaster Response App - Python Dependencies
+# Install with: pip install -r requirements.txt
+# Requires Python >=3.6,<3.10
+
+# 🧱 Core Flask framework
+Flask==2.0.3                  # Web framework for routing and serving
+Werkzeug==2.0.3               # WSGI server and request handling
+Jinja2==3.0.3                 # HTML templating engine
+MarkupSafe==2.0.1             # Escaping for Jinja2 templates
+itsdangerous==2.0.1           # Secure session signing
+
+# 🌐 CORS support
+Flask-Cors==5.0.0             # Enable cross-origin requests (for PouchDB sync)
+
+# 🛠️ CLI and metadata utilities
+click==8.0.4                  # Command-line interface support
+importlib-metadata==4.8.3     # Access package metadata
+typing-extensions==4.1.1      # Backport of typing features
+zipp==3.6.0                   # Zip file handling for metadata
+
+# 🧩 Compatibility for older Python versions
+dataclasses==0.8              # Backport for Python <3.7
+
+################ How to use after Cloning git Repo ########
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
