@@ -24,20 +24,32 @@ System Requirements:
 - CouchDB 3.5+
 - firewalld
 - Git, curl, wget, vim
-=========================================
-✅ Deployment-Ready Repo Structure
+  
+============== ✅ Deployment-Ready Repo Structure ========
+
 disaster-response-app/
+
 ├── app.py
+
 ├── requirements.txt
+
 ├── environment.yaml
+
 ├── disaster_app.service
+
 ├── static/
-│   ├── index.html
-│   ├── main.js
-│   └── pouchdb.min.js
+
+│       ├── index.html
+
+│       ├── main.js
+
+│       └── pouchdb.min.js
+
 ├── .gitignore
+
 ├── README.md
 =======================================
+
 
 Installation Steps
 ==================
