@@ -10,5 +10,4 @@ def serve_index():
 def serve_static(path):
     return send_from_directory(app.static_folder, path)
 
-# Azure uses Gunicorn, so no need for app.run()
-# Just ensure the app object is exposed
+# No app.run() needed — Azure uses Gunicorn to serve the app
