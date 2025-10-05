@@ -11,7 +11,7 @@ itsdangerous==2.0.1           # Secure session signing
 
 # 🌐 CORS support
 Flask-Cors==5.0.0             # Enable cross-origin requests (for PouchDB sync)
-gunicorn
+gunicorn==20.1.0
 
 # 🛠️ CLI and metadata utilities
 click==8.0.4                  # Command-line interface support
