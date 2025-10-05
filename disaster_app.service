@@ -1,0 +1,15 @@
+[Unit]
+Description=Disaster Response Flask App
+After=network.target
+
+[Service]
+User=deploy
+WorkingDirectory=/home/deploy/disaster_app
+Environment="PATH=/home/deploy/disaster_app/venv/bin"
+ExecStart=/home/deploy/disaster_app/venv/bin/python /home/deploy/disaster_app/app.py &
+Restart=always
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
