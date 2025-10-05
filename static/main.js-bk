@@ -1,0 +1,40 @@
+navigator.geolocation.getCurrentPosition(function(position) {
+  document.getElementById('latitude').value = position.coords.latitude;
+  document.getElementById('longitude').value = position.coords.longitude;
+});
+
+const db = new PouchDB('disaster_app');
+
+document.getElementById('incidentForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const incident = {
+    _id: new Date().toISOString(),
+    type: 'incident',
+    description: document.getElementById('description').value,
+    severity: document.getElementById('severity').value,
+    timestamp: new Date().toISOString()
+  };
+
+  db.put(incident).then(() => {
+    document.getElementById('status').innerText = "✅ Incident saved locally!";
+  }).catch(err => {
+    console.error("❌ Error saving incident:", err);
+    document.getElementById('status').innerText = "❌ Error saving incident.";
+  });
+});
+
+// Sync with CouchDB when online
+db.sync('http://admin:vmware@192.168.137.5:5984/disaster_app', {
+  live: true,
+  retry: true
+}).on('change', info => {
+  console.log("🔄 Sync change:", info);
+}).on('paused', () => {
+  console.log("⏸️ Sync paused (offline or idle)");
+}).on('active', () => {
+  console.log("▶️ Sync resumed");
+}).on('error', err => {
+  console.error("❌ Sync error:", err);
+});
+

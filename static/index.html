@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Disaster Response App</title>
+  <script src="pouchdb.min.js"></script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <h1>Report an Incident</h1>
+  <form id="incidentForm">
+    <label>Description:</label><br>
+    <input type="text" id="description"><br><br>
+    <label>Severity:</label><br>
+    <select id="severity">
+      <option value="low">Low</option>
+      <option value="medium">Medium</option>
+      <option value="high">High</option>
+    </select><br><br>
+    
+    <input type="hidden" id="latitude" name="latitude">
+    <input type="hidden" id="longitude" name="longitude">
+
+    <button type="submit">Submit</button>
+  </form>
+  <p id="status"></p>
+</body>
+</html>
+
